@@ -1,6 +1,6 @@
 
 var jsep = require('jsep');
-var Walker = require('./Walker');
+var Walker = require('./lib/Walker');
 
 var regexes = [
   // lambdas: (x) => expression
@@ -33,4 +33,20 @@ function walkAst(param, ctx, ast) {
 }
 
 
+function plugin(receiver) {
+  if (receiver.filter) {
+    var _filter = receiver.filter;
+
+    receiver.filter = function (query, ctx) {
+      if (typeof query !== 'function' || query.args) {
+        return _filter.call(receiver, query);
+      } else {
+        return _filter.call(receiver, parseFunction(query, ctx));
+      }
+    };
+  }
+}
+
+
 module.exports = parseFunction;
+module.exports.plugin = plugin;

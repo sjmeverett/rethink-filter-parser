@@ -1,0 +1,35 @@
+{
+  "name": "rethink-filter-parser",
+  "version": "0.1.0",
+  "description": "Parses simple lambdas and turns them into ReQL.",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "jsep": "^0.3.0",
+    "rethinkdb": "^2.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "rethink-plus": "^0.3.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stewartml/rethink-filter-parser.git"
+  },
+  "keywords": [
+    "rethink",
+    "rethinkdb",
+    "filter",
+    "lambda",
+    "parser"
+  ],
+  "author": "Stewart MacKenzie-Leigh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stewartml/rethink-filter-parser/issues"
+  },
+  "homepage": "https://github.com/stewartml/rethink-filter-parser#readme"
+}
